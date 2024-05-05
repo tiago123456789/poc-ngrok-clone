@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json())
 
 app.use("/*", (req, res) => {
-  res.json({ message: `hello world ${new Date()}`, body: req.body })
+  res.json({ message: `hello world ${new Date()}`, ...req.body })
 });
 
 app.listen(PORT, () => {

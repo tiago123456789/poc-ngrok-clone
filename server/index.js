@@ -14,7 +14,6 @@ io.on('connection', (socket) => {
   console.log('A user connected');
 
   socket.on("return-response", (data) => {
-    console.log(data)
     referenceResponse.send(data)
   })
 
@@ -22,7 +21,6 @@ io.on('connection', (socket) => {
     console.log('User disconnected');
   });
 });
-
 
 app.use(express.json())
 

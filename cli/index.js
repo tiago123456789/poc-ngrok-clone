@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-
+const URL_APP = "https://poc-ngrok-clone-production.up.railway.app"
 const { io } = require("socket.io-client");
 const superagent = require("superagent")
-const socket = io("http://localhost:3000");
+const socket = io(URL_APP);
 
 const port = process.argv[2]
 
@@ -17,3 +17,4 @@ socket.on("new-request", (data) => {
         })
 })
 
+console.log(`Listening request from ${URL_APP}`)
